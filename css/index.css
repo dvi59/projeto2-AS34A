@@ -1,0 +1,18 @@
+body, html {
+    height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+}
+
+.container{
+    width: 100%;
+    display: flex;
+    background: darkolivegreen;
+}
+
+.login-img > img{
+    border-radius: 50%;
+    border-style: solid;
+    border-color: grey;
+    height: 100px;
+    width: 100px;
+}
