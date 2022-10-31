@@ -27,14 +27,22 @@ senha.addEventListener('keyup', () => {
     }
 })
 
+function validaLogin(){
+    const id = localStorage.getItem("user")
+    if(id != null){
+        visibilityLogin.classList.toggle('hidden')
+        visibilitySearch.classList.toggle('hidden')
+    }
+}
 
-function login2(){
+function login(){
     const payloud = {
         email:nome.value,
         password: senha.value
     };
     axios.post(url, payloud)
         .then(response => {
+            localStorage.setItem("user", nome.value)
             if(!!response.data){
                 visibilityLogin.classList.toggle('hidden')
                 visibilitySearch.classList.toggle('hidden')
@@ -47,46 +55,3 @@ function login2(){
         })
 }
 
-function getUser() {
-    axios.get(url)
-        .then(response => {
-            const data = response.data;
-        })
-        .catch(error => console.log())
-}
-
-getUser()
-
-
-function login() {
-    if (!!validSenha || !!validNome ) {
-        alert("Campos não preenchidos corretamente")
-    } else {
-
-        //Salvando informações em localStorage
-
-
-        let listaUser = JSON.parse(localStorage.getItem('listUser') || '[]')
-        localStorage.setItem('listaUser', JSON.stringify(listaUser))
-        listaUser.push({
-            nome: nome.value, pass: senha.value,
-        })
-
-        axios.get(url, {
-            auth: {
-                user, pass,
-            }
-        })
-            .then(response => {
-                const data = response.data
-
-                if (listaUser.nome === data.first_name && listaUser.pass === data.last_name) {
-
-                }
-
-            })
-            .catch(error => console.log())
-
-    }
-
-}
