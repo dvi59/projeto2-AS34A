@@ -13,7 +13,8 @@
         <div id="login" class="login">
             <div class="login-wrapper">
                 <form class="login-form">
-                    <span class="login-title">Login</span>
+                    <span id="title"class="login-title">Login</span>
+                    <div id="error" class="error-title"></div>
                     <div class="input-wrapper">
                         <input class="input" type="text" id="user" placeholder="Nome de Usuário">
                     </div>
@@ -21,21 +22,23 @@
                         <input class="input" type="password" id="pass" placeholder="Senha">
                     </div>
                     <div class="button">
-                        <button type="button" onclick="login()" class="btn btn-outline-secondary">Entrar</button>
+                        <button id="loginBtn" type="button" onclick="login()" class="btn btn-outline-secondary">Entrar</button>
                     </div>
                 </form>
             </div>
         </div>
+
         <div id="search" class="search hidden">
+            <div class="car-error" id="carNameError"></div>
             <div class="input-search">
                 <input class="form-control" type="input" id="carName">
-                <button type="button" class="btn btn-outline-secondary" onclick="consultar()">Buscar</button>
+                <button id="searchBtn" type="button" class="btn btn-outline-secondary" onclick="consultar()">Buscar</button>
             </div>
             <table id="result" class="table">
                 <tr>
                     <th scope="col">Fabricante</th>
-                    <th scope="col">Modelo</th>
                     <th scope="col">Ano</th>
+                    <th scope="col">Modelo</th>
                 </tr>
             </table>
         </div>

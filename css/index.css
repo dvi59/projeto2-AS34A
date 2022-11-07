@@ -131,7 +131,7 @@ textarea {
 .input-search{
     display: flex;
     flex-direction: row;
-    margin: 5px 5px;
+    margin: 10px 5px;
 }
 
 .login-img{
@@ -201,5 +201,17 @@ textarea {
     -o-transition: all 0.4s;
     -moz-transition: all 0.4s;
     transition: all 0.4s;
+}
+
+.error-title{
+    padding: 5px 5px;
+    color: red;
+}
+
+.car-error{
+    padding: 5px 5px;
+    text-align: center;
+    color: red;
+    height: 20px;
 }
 
