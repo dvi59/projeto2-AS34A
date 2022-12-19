@@ -17,6 +17,8 @@ app.use(cookieParser())
 app.use(express.json())
 app.use(routes)
 
+/** TESTE**/
+
 
 
 mongoose.connect('mongodb+srv://root:root@cluster0.rwu0yz6.mongodb.net/?retryWrites=true&w=majority')
